@@ -1,41 +1,43 @@
-cyg-fast
+This is a folk of [cyg-fast](https://github.com/tmshn/cyg-fast).
+
+apt-cyg
 =======
 
-cyg-fast is an advanced version of apt-cyg, command-line installer for [Cygwin](http://cygwin.com/) which cooperates with Cygwin Setup and uses the same repository. 
+apt-cyg is an advanced version of apt-cyg, command-line installer for [Cygwin](http://cygwin.com/) which cooperates with Cygwin Setup and uses the same repository.
 
-Supporting pre-resolving dependencies and parallel-downloading, cyg-fast works faster than apt-cyg.
+Supporting pre-resolving dependencies and parallel-downloading, apt-cyg works faster than apt-cyg.
 
 The syntax is similar to apt-get. Usage examples:
 
-* "cyg-fast install &lt;package names&gt;" to install packages
-* "cyg-fast resume-install" to resume interrupted installing
-* "cyg-fast remove &lt;package names&gt;" to remove packages
-* "cyg-fast update" to update setup.ini
-* "cyg-fast show" to show installed packages
-* "cyg-fast find &lt;pattern(s)&gt;" to find packages matching patterns
-* "cyg-fast describe &lt;pattern(s)&gt;" to describe packages matching patterns
-* "cyg-fast packageof &lt;commands or files&gt;" to locate parent packages
-* "cyg-fast pathof &lt;cache|mirror|mirrordir|cache/mirrordir&gt;" to show path"
+* "apt-cyg install &lt;package names&gt;" to install packages
+* "apt-cyg resume-install" to resume interrupted installing
+* "apt-cyg remove &lt;package names&gt;" to remove packages
+* "apt-cyg update" to update setup.ini
+* "apt-cyg show" to show installed packages
+* "apt-cyg find &lt;pattern(s)&gt;" to find packages matching patterns
+* "apt-cyg describe &lt;pattern(s)&gt;" to describe packages matching patterns
+* "apt-cyg packageof &lt;commands or files&gt;" to locate parent packages
+* "apt-cyg pathof &lt;cache|mirror|mirrordir|cache/mirrordir&gt;" to show path"
 
 Requirements
 -----------
 
-cyg-fast requires the cygwin default environment and optional packages below.
+apt-cyg requires the cygwin default environment and optional packages below.
 
 * aria2
 
 Quick start
 -----------
 
-cyg-fast is a simple script. Once you have a copy, make it executable:
+apt-cyg is a simple script. Once you have a copy, make it executable:
 
-    # chmod +x /bin/cyg-fast
+    # chmod +x /bin/apt-cyg
 
-Optionally place cyg-fast in a bin/ folder on your path.
+Optionally place apt-cyg in a bin/ folder on your path.
 
-Then use cyg-fast, for example:
+Then use apt-cyg, for example:
 
-    # cyg-fast install vim
+    # apt-cyg install vim
 
 New features
 ------------
@@ -44,7 +46,7 @@ New features
 
 Aria2 is an advances file downloading tool that allows you to download files with faster speed.
 
-cyg-fast provides multi-connection downloading using aria2.
+apt-cyg provides multi-connection downloading using aria2.
 
 You can change the maximum number of connections with the ```--max-connections``` option.
 
@@ -53,7 +55,7 @@ You can change the maximum number of connections with the ```--max-connections``
 Let think a case that you want to install the x86 package when you are working under the x86_64 environment.
 For example:
 
-    # cyg-fast --charch x86 install chere
+    # apt-cyg --charch x86 install chere
 
 As of 2013-10-26, chere package is provided for only the repository for x86.
 
@@ -62,7 +64,7 @@ Of course, you must install both environments of x86_64 and x86, beforehand.
 
 ### Pre-resolving dependencies
 
-cyg-fast finds all depending packages before downloading and installing.
+apt-cyg finds all depending packages before downloading and installing.
 
 ### Check dependency on removing
 
@@ -70,17 +72,17 @@ You can remove all packages depending on packages you want to remove.
 
 ### Resume installation when downloading fails
 
-Type ```cyg-fast resume-install``` to resume interrupted downloading.
+Type ```apt-cyg resume-install``` to resume interrupted downloading.
 
 You don't need to be annoy with an unstable internet connection...
 
 ### Force re-install packages
 
-You can reinstall a package by using ```cyg-fast --force install <package>```
+You can reinstall a package by using ```apt-cyg --force install <package>```
 
 ### Rapid mode
 
-If you are hurrying to install some packages, use ```--rapid``` to avoid wasting time 
+If you are hurrying to install some packages, use ```--rapid``` to avoid wasting time
 by updating setup.ini, checking certificates, checking signatures, checking MD5s, etc.
 
 Contributing (original apt-cyg)
