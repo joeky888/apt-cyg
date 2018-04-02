@@ -98,7 +98,7 @@ function findworkspace()
 {
   # default working directory, mirror and architecture
 
-  mirror=https://mirror.kernel.org/sourceware/cygwin
+  mirror=https://mirrors.kernel.org/sourceware/cygwin
   arch="$(current_cygarch)"
   cache=/setup
 
