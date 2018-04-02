@@ -450,17 +450,18 @@ function apt-cyg-find ()
 
 function apt-cyg-search {
   cd /tmp
-  for pkg in "${pks[@]}"
+  for pkg in "$@"
   do
-    printf -v qs 'text=1&arch=%s&grep=%s' $arch "$pkg"
-    wget -O matches cygwin.com/cgi-bin2/package-grep.cgi?"$qs"
+    printf -v qs 'text=1&arch=%s&grep=%s' $(arch) "$pkg"
+    aria2c -o matches https://cygwin.com/cgi-bin2/package-grep.cgi?"$qs" || wget -O matches https://cygwin.com/cgi-bin2/package-grep.cgi?"$qs"
     awk '
     NR == 1 {next}
     mc[$1]++ {next}
     /-debuginfo-/ {next}
     /^cygwin32-/ {next}
     {print $1}
-    ' "FS=-[[:digit:]]" matches
+    ' "FS=-[[:digit:]]" matches | grep --color -E "^|$pkg"
+    rm -f matches*
   done
 }
 
