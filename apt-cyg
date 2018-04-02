@@ -452,7 +452,7 @@ function apt-cyg-search {
   cd /tmp
   for pkg in "$@"
   do
-    printf -v qs 'text=1&arch=%s&grep=%s' $(arch) "$pkg"
+    printf -v qs 'text=1&arch=%s&grep=%s' $(current_cygarch) "$pkg"
     aria2c -o matches https://cygwin.com/cgi-bin2/package-grep.cgi?"$qs" || wget -O matches https://cygwin.com/cgi-bin2/package-grep.cgi?"$qs"
     awk '
     NR == 1 {next}
