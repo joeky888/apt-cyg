@@ -619,7 +619,6 @@ function apt-cyg-resume-install()
     for p in $( cat /tmp/apt-cyg-packages ); do
       echo -n $p " "
     done
-    echo; ask_user "Do you wish to continue?" || quit
 
     [ $RESUME_INSTALL = 0 ] || findworkspace
 
@@ -768,7 +767,6 @@ function remove-dep()
 
     echo Following packages will be removed:
     echo ${REMOVE[@]}
-    ask_user "Do you wish to continue?" || exit
 
     for pkg in ${REMOVE[@]}; do
 
