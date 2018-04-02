@@ -14,6 +14,7 @@ The syntax is similar to apt-get. Usage examples:
 * "apt-cyg remove &lt;package names&gt;" to remove packages
 * "apt-cyg update" to update setup.ini
 * "apt-cyg show" to show installed packages
+* "apt-cyg search &lt;pattern(s)&gt;" to search packages on cygwin.com
 * "apt-cyg find &lt;pattern(s)&gt;" to find packages matching patterns
 * "apt-cyg describe &lt;pattern(s)&gt;" to describe packages matching patterns
 * "apt-cyg packageof &lt;commands or files&gt;" to locate parent packages
