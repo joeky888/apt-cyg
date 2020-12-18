@@ -266,7 +266,7 @@ function apt-cyg-upgrade-self ()
         git pull -v
     else
         mv $cyg_fast $cyg_fast_dir/apt-cyg.bak
-        aria2c "https://raw.githubusercontent.com/lambdalice/apt-cyg/master/apt-cyg" --dir $cyg_fast_dir ||
+        aria2c "https://raw.githubusercontent.com/joeky888/apt-cyg/master/apt-cyg" --dir $cyg_fast_dir ||
         {
             error "while updating setup.ini"
             exit 1
