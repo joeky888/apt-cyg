@@ -627,7 +627,7 @@ function apt-cyg-resume-install()
     echo "Start downloading..."
     ${ARIA2C[@]} --input-file /tmp/apt-cyg-downloads \
                  `[ $(current_cygarch) = "x86" ] || echo "--deferred-input"` \
-                 -c -s16 -k1M -x16 -j16 || {
+                 -c -s16 -k1M -x16 -j16 --http-accept-gzip=true --check-certificate=false || {
       echo -e "\e[1;34mInterrupted:\e[0m To resume installing, run \"apt-cyg resume-install\" ."
       exit 1
     }
